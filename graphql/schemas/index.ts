@@ -10,8 +10,8 @@ scalar Date
   }
 
   type Query {
-    getAllTasks(isDone: Boolean!): [Task]
-    getFinishedTasksLists(isDone: Boolean!): [Task]
+    getAllTasks: [Task]
+    getFinishedTasksLists: [Task]
   }
 
   type Mutation {
