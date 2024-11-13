@@ -1,4 +1,5 @@
 import Tasks from "../../models/Tasks";
+const createdAt= new Date()
 type Task =
   {
     taskName:String,
@@ -7,7 +8,7 @@ type Task =
     priority:Number
   }
 
-export const  addTask = async (_:any, { taskName,createdAt,priority}:Task) => {
-    const task = Tasks.create({ taskName,createdAt,priority});
+export const  addTask = async (_:any, { taskName,priority, isDone}:Task) => {
+    const task = Tasks.create({ taskName,createdAt:createdAt,priority,isDone});
     return task;
   }
