@@ -3,19 +3,19 @@ import { gql } from "graphql-tag";
 export const typeDefs = gql`
 scalar Date
   type Task {
+    taskName:String
     isDone: Boolean,
-    priority: Int!
+    priority: Int
     createdAt: Date
-    updatedAt: Date
   }
 
   type Query {
-    getAllTasks: [Task]
-    getFinishedTasksLists: [Task]
+    getAllTasks(isDone: Boolean!): [Task]
+    getFinishedTasksLists(isDone: Boolean!): [Task]
   }
 
   type Mutation {
-    addTask(title: String!, description: String): Task
-    updateTask(id: ID!, title: String, description: String, status: String): Task
+    addTask(taskName: String!): Task
+    updateTask(id: ID!): Task
   }
 `;

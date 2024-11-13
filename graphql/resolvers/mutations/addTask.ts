@@ -3,12 +3,11 @@ type Task =
   {
     taskName:String,
     isDone: Boolean,
-    priority: Number,
     createdAt:Date,
-    updatedAt:Date
+    priority:Number
   }
 
-export const  addTask = async (_:any, { taskName, isDone,priority,  createdAt,updatedAt}:Task) => {
-    const task = Tasks.create({ taskName, isDone,priority});
+export const  addTask = async (_:any, { taskName,createdAt,priority}:Task) => {
+    const task = Tasks.create({ taskName,createdAt,priority});
     return task;
   }
