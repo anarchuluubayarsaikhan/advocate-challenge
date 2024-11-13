@@ -15,7 +15,7 @@ scalar Date
   }
 
   type Mutation {
-    addTask(taskName: String!): Task
+    addTask(taskName: String!, isDone:Boolean): Task
     updateTask(id: ID!): Task
   }
 `;
